@@ -35,43 +35,64 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
+
 	<build>
 		<finalName>kampfnacht-ch</finalName>
 		<plugins>
 			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-antrun-plugin</artifactId>
+				<groupId>org.codehaus.gmaven</groupId>
+				<artifactId>gmaven-plugin</artifactId>
+				<version>1.4</version>
 				<executions>
 					<execution>
 						<phase>package</phase>
-						<configuration>
-							<target>
-								<if>
-								  <available file="brunch" />
-								  <then>
-								    <echo message="is there" />
-									<exec executable="brunch"
-										dir="brunch"
-										resultproperty="brunch.status" failonerror="false">
-											<arg value="build" />
-									</exec>
-									<echo message="Brunch status was: ${brunch.status}" />
-								  </then>
-								  <else>
-								    <echo message="is not there" />
-								  </else>
-								</if>
-							</target>
-						</configuration>
 						<goals>
-							<goal>run</goal>
+							<goal>execute</goal>
 						</goals>
+						<configuration>
+							<source><![CDATA[
+log.info('### eating brunch...')
+
+// try building brunch application
+try{
+  def ant = new AntBuilder()
+  ant.exec(
+    dir:"brunch",
+    outputproperty:"cmdOut",
+    errorproperty: "cmdErr",
+    resultproperty:"cmdExit",
+    failonerror: "false",
+    executable: 'brunch') {
+      arg(line:"""build""")
+  }
+}catch(Throwable e){
+  ant.property(name:"cmdExit", value:-1)
+  ant.property(name:"cmdErr", value:e.toString())
+}
+if("${ant.project.properties.cmdExit}".toInteger() == 0)
+  println "${ ant.project.properties.cmdOut}"
+else
+  println "ERROR: ${ant.project.properties.cmdErr}"
+
+//try to copy brunch public folder
+try{
+ant.mkdir(dir: "src/main/webapp/app")
+ant.copy(todir: "src/main/webapp/app", failonerror:"false") {
+    fileset(dir : "brunch/public")
+  }
+}catch(Throwable e) {}
+
+// test and exit
+assert new File("src/main/webapp/app/index.html").exists(), "### ERROR: teribble brunch, no index.html!"
+log.info('### just finished brunch!')
+							]]></source>
+						</configuration>
 					</execution>
 				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
 	</build>
