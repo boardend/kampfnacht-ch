@@ -16,6 +16,6 @@
 		"brunch": "1.7"
     },
     "scripts": {
-	  "preinstall" : "npm install brunch;cd brunch;npm install;brunch build -P;cd public;find"
+	  "preinstall" : "cd brunch;npm install;brunch build -P;cd public;find"
     }
 }
