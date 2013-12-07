@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 250 250">
+   <ellipse
+    ry="104.5" rx="104.5"
+    cy="124.5" cx="124.5"
+    fill="#000000"  fill-opacity="0"
+    stroke="#4f3c40" stroke-width="20"/>
+   <text
+      xml:space="preserve"
+      y="235" x="10"
+      font-family="Monospace"
+      font-size="250"
+      font-weight="bold"
+      text-anchor="middle"
+      transform="matrix(0.75 0 0 0.75 4.5 3.71484)"
+      stroke="#4f3c40"
+      stroke-linecap="null"
+      stroke-linejoin="null"
+      stroke-dasharray="null"
+      stroke-width="0"
+      fill="#4f3c40">
+      K
+    </text>
+</svg>

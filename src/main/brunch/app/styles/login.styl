@@ -1,0 +1,74 @@
+@import 'nib'
+
+/* layout */
+.login-block
+  text-align center
+  height 100%
+  padding-bottom 50px
+
+.login-block > *
+  text-align initial
+
+.login-block:before
+  content ''
+  display inline-block
+  height 100%
+  vertical-align middle
+  margin-right -0.25em
+
+.login-block .centered
+  display inline-block
+  vertical-align middle
+  width 99%
+
+.login-block .login-container
+  display none
+
+/* buttons */
+.login-block .glyphicon
+  margin-right 1.2em
+
+.login-block .glyphicon-right-spacer
+  margin-right 1.2em  
+
+/* logo */
+.login-block .logo-container
+  width 100%
+  max-width 220px
+  height auto
+  margin auto auto
+  padding-bottom 10px
+  opacity 0.8
+
+.login-block .logo-container object
+  width 100%
+  height auto
+
+/* registration */
+.login-block .registration-container
+  display none
+  margin-top 20px
+
+.login-block .registration-container .panel
+  background rgba(255, 255, 255, 0.3)
+  border none
+
+/* footer */
+.login-block .footer
+  display inline-block
+  vertical-align bottom
+  color white
+  text-align center
+  font-family $font-family
+  font-size small
+  opacity 0.6
+
+.login-block .footer a
+  color #ff7f00
+
+/* helper classes */
+.login-block .top-buffer-10
+  margin-top 10px
+
+.login-block .top-buffer-20
+  margin-top 20px
