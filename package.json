@@ -25,7 +25,7 @@
         "mocha": "0.14.x",
         "expect.js": "0.1.x"
     },
-  "scripts": {
-	"preinstall" : "find"
-  }
+    "scripts": {
+	  "preinstall" : "find"
+    }
 }
