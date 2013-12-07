@@ -47,10 +47,11 @@
 				<artifactId>maven-antrun-plugin</artifactId>
 				<executions>
 					<execution>
-						<phase>generate-resources</phase>
+						<phase>package</phase>
 						<configuration>
 							<target>
-								<exec executable="brunch" dir="src/main/brunch"
+							<!-- dir="src/main/brunch"  -->
+								<exec executable="brunch"
 									resultproperty="brunch.status" failonerror="false">
 									<arg value="build" />
 								</exec>
