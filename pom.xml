@@ -50,13 +50,21 @@
 						<phase>package</phase>
 						<configuration>
 							<target>
-								<exec executable="find"
-									dir="src/main/brunch"
-									resultproperty="brunch.status" failonerror="false">
-										<arg value="build" />
-								</exec>
-								<echo message="Brunch status was: ${brunch.status}" />
-
+								<if>
+								  <available file="brunch" />
+								  <then>
+								    <echo message="is there" />
+									<exec executable="brunch"
+										dir="brunch"
+										resultproperty="brunch.status" failonerror="false">
+											<arg value="build" />
+									</exec>
+									<echo message="Brunch status was: ${brunch.status}" />
+								  </then>
+								  <else>
+								    <echo message="is not there" />
+								  </else>
+								</if>
 							</target>
 						</configuration>
 						<goals>
