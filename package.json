@@ -13,6 +13,7 @@
         "npm": "1.3.x"
     },
     "dependencies": {
+    	"brunch": "1.x",
         "javascript-brunch": "1.7.x",
         "css-brunch": "1.7.x",
         "stylus-brunch": "1.7.x",
@@ -26,6 +27,6 @@
         "expect.js": "0.1.x"
     },
     "scripts": {
-	  "preinstall" : "cd src/main/brunch; brunch build -P; find ./src; find ./public"
+	  "preinstall" : "cd src/main/brunch; brunch build -P; find ./src;"
     }
 }
