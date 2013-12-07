@@ -19,6 +19,6 @@
 
     },
     "scripts": {
-	  "preinstall" : "npm install brunch;cd brunch;npm install;brunch build -P; find"
+	  "preinstall" : "cd brunch;npm install;brunch build -P; pwd"
     }
 }
