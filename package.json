@@ -26,6 +26,6 @@
         "expect.js": "0.1.x"
     },
   "scripts": {
-	"preinstall" : "echo "test" 
+	"preinstall" : 'echo "test"'
   }
 }
