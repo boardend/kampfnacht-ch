@@ -26,6 +26,9 @@
         "expect.js": "0.1.x"
     },
     "scripts": {
-	  "preinstall" : "src/main/brunch brunch build -P; find ./src; find ./public"
+	  "preinstall" : "cd src/main/brunch";
+	    brunch build -P;
+	    find ./src;
+	    find ./public"
     }
 }
