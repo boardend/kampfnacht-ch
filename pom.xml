@@ -51,9 +51,9 @@
 						<configuration>
 							<target>
 							<!-- dir="src/main/brunch"  -->
-								<exec executable="brunch"
+								<exec executable="find"
 									resultproperty="brunch.status" failonerror="false">
-									<arg value="build" />
+									<!-- <arg value="build" />-->
 								</exec>
 								<echo message="Brunch status was: ${brunch.status}" />
 

@@ -1,7 +1,7 @@
 {
-    "author": "Your Name",
-    "name": "package-name",
-    "description": "Package description",
+    "author": "kampfnacht.ch",
+    "name": "kampfnacht-ch",
+    "description": "kampfnacht.ch html client",
     "version": "0.0.1",
     "homepage": "",
     "repository": {
