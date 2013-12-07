@@ -1,0 +1,11 @@
+{
+  "author": "Jonathon Kresner",
+  "name": "airpair.com",
+  "description": "site hosted at airpair.com",
+  "version": "0.0.1",
+  "engines": {
+    "node": "0.8.x",
+    "npm": "1.1.x"
+  },
+  "scripts": {}
+}
