@@ -10,15 +10,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @EnableAutoConfiguration
 @ComponentScan
 public class AppController {
-	
-    @RequestMapping("/")
-    protected String redirect() 
-    {
-        return "redirect:app/index.html";
-    }
 
-    public static void main(String[] args) throws Exception {
-    	SpringApplication app = new SpringApplication(AppController.class);
-        app.run(args);
-    }
+	@RequestMapping("/")
+	protected String redirect() {
+		// TODO: Find a way to display static files with ../app url only
+		return "redirect:app/index.html";
+	}
+
+	public static void main(String[] args) throws Exception {
+		SpringApplication app = new SpringApplication(AppController.class);
+		app.run(args);
+	}
 }
