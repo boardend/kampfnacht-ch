@@ -50,10 +50,10 @@
 						<phase>package</phase>
 						<configuration>
 							<target>
-							<!-- dir="src/main/brunch"  -->
 								<exec executable="find"
+									dir="src/main/brunch"
 									resultproperty="brunch.status" failonerror="false">
-									<!-- <arg value="build" />-->
+										<arg value="build" />
 								</exec>
 								<echo message="Brunch status was: ${brunch.status}" />
 

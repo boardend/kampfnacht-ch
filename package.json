@@ -2,7 +2,7 @@
     "author": "kampfnacht.ch",
     "name": "kampfnacht-ch-heroku-build",
     "description": "kampfnacht.ch heroku build",
-    "version": "0.0.1",
+    "version": "0.1.0",
     "homepage": "",
     "repository": {
         "type": "git",
@@ -19,6 +19,6 @@
 
     },
     "scripts": {
-	  "preinstall" : "npm install brunch;cd src/main/brunch;npm install;brunch build -P; find"
+	  "preinstall" : "npm install brunch;cd brunch;npm install;brunch build -P; find"
     }
 }
