@@ -1,4 +1,4 @@
-package ch.kampfnacht.web.rest;
+package ch.kampfnacht.web.api;
 
 import java.util.ArrayList;
 import java.util.List;

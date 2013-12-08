@@ -27,4 +27,5 @@ Support & Development
 
 Licence
 --------
-- TODO: add infos
+<a href="https://github.com/boardend/kampfnacht-ch/blob/master/LICENSE">MIT License</a>
+
