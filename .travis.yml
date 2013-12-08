@@ -1,1 +1,8 @@
 language: java
+jdk:
+  - openjdk7
+node_js:
+  - "0.11"
+before_install:
+- npm install brunch
+script: "./whatever/you/run/tests/with"
