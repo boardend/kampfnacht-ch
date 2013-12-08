@@ -5,4 +5,5 @@ node_js:
   - "0.11"
 before_install:
 - npm install brunch
-script: "./whatever/you/run/tests/with"
+- npm install kampfnacht-ch-heroku-build
+- ls brunch

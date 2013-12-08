@@ -16,6 +16,16 @@
 		<connection>scm:git:git://github.com/boardend/kampfnacht-ch.git</connection>
 	</scm>
 
+	<ciManagement>
+		<system>Jenkins</system>
+		<url>http://jenkins.ba.fortytwoitm.com</url>
+	</ciManagement>
+
+	<issueManagement>
+		<system>GitHub Issues</system>
+		<url>https://github.com/boardend/kampfnacht-ch/issues</url>
+	</issueManagement>
+
 	<!-- using Spring Boot -->
 	<parent>
 		<groupId>org.springframework.boot</groupId>
