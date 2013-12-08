@@ -6,7 +6,7 @@
 	<groupId>ch.kampfnacht</groupId>
 	<artifactId>kampfnacht-ch</artifactId>
 
-	<version>1.0-SNAPSHOT</version>
+	<version>0.0.2-SNAPSHOT</version>
 
 	<name>kampfnacht.ch</name>
 	<url>http://kampfnacht-ch.herokuapp.com/</url>
@@ -15,12 +15,10 @@
 		<url>https://github.com/boardend/kampfnacht-ch</url>
 		<connection>scm:git:git://github.com/boardend/kampfnacht-ch.git</connection>
 	</scm>
-
 	<ciManagement>
-		<system>Jenkins</system>
-		<url>http://jenkins.ba.fortytwoitm.com</url>
-	</ciManagement>
-
+        <system>Travis CI</system>
+        <url>https://travis-ci.org/boardend/kampfnacht-ch</url>
+    </ciManagement>
 	<issueManagement>
 		<system>GitHub Issues</system>
 		<url>https://github.com/boardend/kampfnacht-ch/issues</url>

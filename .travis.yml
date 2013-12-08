@@ -1,9 +1,15 @@
 language: java
 jdk:
-  - openjdk7
+- openjdk7
 node_js:
-  - "0.11"
+- '0.11'
 before_install:
 - npm install brunch
 - npm install
-- ls brunch/public
+deploy:
+  provider: heroku
+  api_key:
+    secure: kGpzwS67r/P2afEvDA4PaARXXJoBjznkQ+31JsOHQKCe3eBNiT6gDL61OPY389Oz1f5XV1BqAmeiPH0MdLQeUK7xgxE4HSzgnMn7r53NWTk/sR8/cEsY+yxtH3DHcq3bUNF7sfFJ59WlkBOg0Z+HKZDnphyLHl/Dh7YBzGlQH+M=
+  app: kampfnacht-ch
+  on:
+    repo: boardend/kampfnacht-ch
