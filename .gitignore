@@ -1,4 +1,35 @@
-/target
+# generic files to ignore
+*~
+*.lock
+*.DS_Store
+*.swp
+*.out
+*.bak
+*.log
+
+# generated files
+*.class
+bin/
+gen/
+
+# maven
+target/
+
+# sppring
+.springBeans
+
+# eclipse stuff
+*.launch
+*.metadata*
 /.classpath
 /.project
 /.settings/*
+
+# netbeans stuff
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+nbactions.xml
+nb-configuration.xml
