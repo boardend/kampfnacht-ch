@@ -53,38 +53,40 @@
 							<source><![CDATA[
 log.info('### eating brunch...')
 
-// try building brunch application
+// try to make brunch
+def ant = new AntBuilder()
 try{
-  def ant = new AntBuilder()
   ant.exec(
     dir:"brunch",
     outputproperty:"cmdOut",
     errorproperty: "cmdErr",
     resultproperty:"cmdExit",
-    failonerror: "false",
+    failonerror: "true",
     executable: 'brunch') {
       arg(line:"""build""")
   }
 }catch(Throwable e){
-  ant.property(name:"cmdExit", value:-1)
+  ant.property(name:"cmdExit", value:"-1")
   ant.property(name:"cmdErr", value:e.toString())
 }
-if("${ant.project.properties.cmdExit}".toInteger() == 0)
+if("${ant.project.properties.cmdExit}".toInteger() == 0) {
   println "${ ant.project.properties.cmdOut}"
-else
-  println "ERROR: ${ant.project.properties.cmdErr}"
+} else {
+  println "[WARNING] \n${ant.project.properties.cmdErr}"
+  println "(will try to use old files as a fallback)\n\n"
+}
 
-//try to copy brunch public folder
-try{
+// serve brunch
+try {
 ant.mkdir(dir: "src/main/webapp/app")
 ant.copy(todir: "src/main/webapp/app", failonerror:"false") {
     fileset(dir : "brunch/public")
   }
-}catch(Throwable e) {}
+} catch(Throwable e) {}
 
-// test and exit
-assert new File("src/main/webapp/app/index.html").exists(), "### ERROR: teribble brunch, no index.html!"
-log.info('### just finished brunch!')
+// taste brunch and exit
+assert new File("src/main/webapp/app/index.html").exists(), "\n\n### ERROR: teribble brunch, no index.html found!\n(is brunch installed? visit http://brunch.io)\n\n"
+log.info('### just had delicious brunch!')
 							]]></source>
 						</configuration>
 					</execution>
