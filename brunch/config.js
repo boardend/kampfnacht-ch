@@ -34,6 +34,7 @@ exports.config = {
             joinTo: "javascripts/app.js"
         }
     },
+    sourceMaps: false,
     server: {
         port: 8080,
         run: true
